@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+
+</head> 
+<body> 
+
+<script type="text/javascript"> 
+ let message = "Hello, salut!";
+ document.write(message + "<br>");
+ let words = 1;
+ let letters = 1;
+ let i = 0;
+ while(message[i++]){
+	if(message[i] == " ")
+		words++;
+	if((message[i] >= 'A' && message[i] <= 'Z')||(message[i] >= 'a' && message[i] <= 'z'))
+		letters++;
+ }
+ document.write("Слов: " + words + " букв: " + letters + "<br>");
+ document.write('URL: ', document.URL,'<br>');
+ document.write('Имя протокола: ', document.location.protocol,'<br>');
+ document.write('Имя файла: ', document.location.pathname.split('.')[0],'<br>');
+ document.write('Расширение: ', document.location.pathname.split('.')[1],'<br>');
+ 
+ let strGET = window.location.search.replace( '?', '');
+ document.write('Подстрока параметров: ', strGET,'<br>');
+
+ let abc = 'Anchor';
+ document.write('Якорь 1: ', abc.anchor('Mayahee'), '<br>');
+ document.write('Якорь 2: ', abc.anchor('Mayahoo'), '<br>');
+ 
+ document.write('<a href="https://rickrolled.fr/" target="_blank" id="RickRoll">( ͡° ͜ʖ ͡°) </a><br>');
+ 
+ document.write('<img src="https://web.archive.org/web/20190316144408if_/https://2ch.hk/po/src/32112932/15527352373950.png" style="width: 20%" id="new">');
+ document.write('<img src="https://web.archive.org/web/20190316144408if_/https://2ch.hk/po/src/32112932/15527352373950.png" style="width: 50%" id="new2">');
+ 
+ document.write('<br>');
+ document.write('Кол-во анкоров: ', document.anchors.length,'<br>');
+ document.write('Кол-во ссылок: ', document.links.length,'<br>');
+ document.write('Вывод имеющегося анкора: ', document.anchors[0].innerHTML, '<br>')
+ document.write('Кол-во картинок: ', document.images.length,'<br>');
+ document.write('Ширина первой картинки: ', document.images[0].width,'<br>');
+ document.write('Ширина самой широкой картинки: ', Math.max.apply(Math, Array.from(document.images).map(function(o) { return o.width; })), '<br>');
+
+ for(i=0; i<10; i++){
+  document.write('<form id="', i,'">')
+  document.write('<input type="button" class="class" value="Название" onClick="alert(\'Название\')"></input>')
+  document.write('<input type="button" value="Принадлежность" onClick="alert(',i,')"></input>')
+  document.write('<input type="button" value="Число полей" onClick="alert(',document.forms[i].childElementCount+1,')"></input>')
+  document.write('</form>')
+}
+for(i=0; i<10; i+=2){
+  document.write(document.forms[i].id, ', ')
+}
+
+</script> 
+ 
+<script src="script.js"></script>
+</body> 
+</html>
